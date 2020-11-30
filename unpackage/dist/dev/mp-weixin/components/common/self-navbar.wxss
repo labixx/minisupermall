@@ -1,0 +1,23 @@
+
+.self-navvar.data-v-fc71c4f0{
+	width:100%;
+	height:80rpx;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+}
+.navvar-item-left.data-v-fc71c4f0{
+	-webkit-box-flex:2;
+	-webkit-flex:2;
+	        flex:2;
+}
+.navvar-item-right.data-v-fc71c4f0{
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+	        flex:1;
+}
+

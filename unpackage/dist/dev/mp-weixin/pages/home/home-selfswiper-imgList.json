@@ -1,0 +1,12 @@
+{
+  "component": true,
+  "usingComponents": {
+    "home-selfswiper-imgList": "/pages/home/home-selfswiper-imgList",
+    "uni-icons": "/components/uni-icons/uni-icons",
+    "navbar": "/components/common/self-navbar",
+    "selfswiper": "/components/common/self-swiper",
+    "recommend": "/pages/home/childComponents/recommend",
+    "tabcontrol": "/pages/home/childComponents/tabcontrol",
+    "homegoodsinfo": "/pages/home/childComponents/homegoodsinfo"
+  }
+}

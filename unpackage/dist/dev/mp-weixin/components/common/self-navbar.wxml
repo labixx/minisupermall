@@ -1,0 +1,1 @@
+<view class="self-navvar self-define data-v-fc71c4f0"><view class="navvar-item-left data-v-fc71c4f0"><slot name="left"></slot></view><view class="navvar-item-right data-v-fc71c4f0"><slot name="right"></slot></view></view>

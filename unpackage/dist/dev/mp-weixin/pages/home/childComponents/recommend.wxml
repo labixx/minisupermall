@@ -1,0 +1,1 @@
+<view class="recommend-wrapper data-v-341cc648"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="index"><block class="data-v-341cc648"><view class="recommend-item data-v-341cc648"><image src="{{item.image}}" mode="widthFix" class="data-v-341cc648"></image><text class="data-v-341cc648">{{item.title}}</text></view></block></block></view>

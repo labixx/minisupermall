@@ -1,0 +1,9 @@
+{
+  "componentGenerics": {
+    "scoped-slots-imgList": true
+  },
+  "component": true,
+  "usingComponents": {
+    "uni-swiper-dot": "/components/uni-swiper-dot/uni-swiper-dot"
+  }
+}
