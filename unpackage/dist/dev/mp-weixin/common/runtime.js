@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/uni-icons/uni-icons":1,"pages/home/childComponents/homegoodsinfo":1,"components/common/self-navbar":1,"components/common/self-swiper":1,"pages/home/childComponents/recommend":1,"pages/home/childComponents/tabcontrol":1,"components/uni-swiper-dot/uni-swiper-dot":1};
+/******/ 		var cssChunks = {"components/uni-icons/uni-icons":1,"components/common/self-navbar":1,"components/common/self-swiper":1,"pages/home/childComponents/backtop":1,"pages/home/childComponents/homegoodsinfo":1,"pages/home/childComponents/recommend":1,"pages/home/childComponents/tabcontrol":1,"components/uni-swiper-dot/uni-swiper-dot":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/uni-icons/uni-icons":"components/uni-icons/uni-icons","pages/home/childComponents/homegoodsinfo":"pages/home/childComponents/homegoodsinfo","components/common/self-navbar":"components/common/self-navbar","components/common/self-swiper":"components/common/self-swiper","pages/home/childComponents/recommend":"pages/home/childComponents/recommend","pages/home/childComponents/tabcontrol":"pages/home/childComponents/tabcontrol","components/uni-swiper-dot/uni-swiper-dot":"components/uni-swiper-dot/uni-swiper-dot"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/uni-icons/uni-icons":"components/uni-icons/uni-icons","components/common/self-navbar":"components/common/self-navbar","components/common/self-swiper":"components/common/self-swiper","pages/home/childComponents/backtop":"pages/home/childComponents/backtop","pages/home/childComponents/homegoodsinfo":"pages/home/childComponents/homegoodsinfo","pages/home/childComponents/recommend":"pages/home/childComponents/recommend","pages/home/childComponents/tabcontrol":"pages/home/childComponents/tabcontrol","components/uni-swiper-dot/uni-swiper-dot":"components/uni-swiper-dot/uni-swiper-dot"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

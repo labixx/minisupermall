@@ -1,0 +1,13 @@
+
+.backtop-wrapper.data-v-77d5aecc{
+	z-index:99;
+	position:fixed;
+	right:20rpx;
+	bottom:44rpx;
+}
+image.data-v-77d5aecc{
+	width:100rpx;
+	height:100rpx;
+}
+	
+

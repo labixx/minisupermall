@@ -23,8 +23,9 @@
 		<view class="weekImg">
 			<image src="@/static/img/home/recommend_bg.794b6628.jpg"></image>
 		</view>
-		<tabcontrol @titiesClick="titlesClick"></tabcontrol>
+		<tabcontrol :titles="tabTitles" @titiesClick="titlesClick"></tabcontrol>
 		<homegoodsinfo :list="goods[currentType].list"></homegoodsinfo>
+		<backtop :showBackTop="isShowBackTop"></backtop>
 	</view>
 </template>
 
@@ -36,6 +37,7 @@
 	import recommend from './childComponents/recommend.vue';
 	import tabcontrol from './childComponents/tabcontrol.vue';
 	import homegoodsinfo from './childComponents/homegoodsinfo.vue';
+	import backtop from  './childComponents/backtop.vue';
 	export default {
 		 components: {
 			 uniIcons,
@@ -44,6 +46,7 @@
 			 recommend,
 			 tabcontrol,
 			 homegoodsinfo,
+			 backtop
 		},
 		data(){
 			return {
@@ -64,6 +67,8 @@
 					}
 				},
 				currentType:"pop",
+				isShowBackTop:false,
+				tabTitles:['流行','新款','精选'],
 			
 			}
 		},
@@ -73,8 +78,12 @@
 			this.getMainGoodsInfo('new');
 			this.getMainGoodsInfo('sell'); 
 			 // this.getMainGoodsInfo(this.currentType);
-			
 		},
+		//页面滚动事件
+		onPageScroll(event){
+			this.isShowBackTop=event.scrollTop>1000;
+		},
+				
 		methods:{	
 			//获取轮播图数据
 			getSwiperImgList(){
@@ -111,10 +120,7 @@
 				//console.log("当前所点击的是",this.currentType);
 				//点击标题进行发送对应得商品数据
 				this.getMainGoodsInfo(this.currentType);
-				
 			}
-			
-			
 			}
 			
 	}

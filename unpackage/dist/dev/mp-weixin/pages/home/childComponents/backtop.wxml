@@ -1,0 +1,1 @@
+<block wx:if="{{showBackTop}}"><view class="backtop-wrapper data-v-77d5aecc"><image class="imgs data-v-77d5aecc" src="/static/img/home/top.png" data-event-opts="{{[['tap',[['handleBackTop',['$event']]]]]}}" bindtap="__e"></image></view></block>

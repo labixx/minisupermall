@@ -904,7 +904,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_NAME":"Miniproject","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"Miniproject","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -1936,9 +1936,37 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 17:
-/*!*******************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/Miniproject/Miniproject/network/index.js ***!
-  \*******************************************************************************/
+/*!**********************************************************************************!*\
+  !*** C:/Users/26064/Desktop/Miniproject/Miniproject/Miniproject/network/home.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.swiperImg = swiperImg;exports.mainGoodsList = mainGoodsList;var _index = _interopRequireDefault(__webpack_require__(/*! @/network/index.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+function swiperImg() {
+  return (0, _index.default)({
+    url: '/home/multidata' });
+
+}
+
+function mainGoodsList(type, page) {
+  return (0, _index.default)({
+    url: '/home/data',
+    //注意：使用uni.request得get对应得参数属性使用：data
+    data: {
+      type: type,
+      page: page } });
+
+
+}
+
+/***/ }),
+
+/***/ 18:
+/*!***********************************************************************************!*\
+  !*** C:/Users/26064/Desktop/Miniproject/Miniproject/Miniproject/network/index.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7490,7 +7518,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_NAME":"Miniproject","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"Miniproject","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7511,14 +7539,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_NAME":"Miniproject","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"Miniproject","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_NAME":"Miniproject","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"Miniproject","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7604,7 +7632,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_NAME":"Miniproject","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"Miniproject","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8043,9 +8071,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 4:
-/*!*************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/Miniproject/Miniproject/pages.json ***!
-  \*************************************************************************/
+/*!*****************************************************************************!*\
+  !*** C:/Users/26064/Desktop/Miniproject/Miniproject/Miniproject/pages.json ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -8053,10 +8081,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 43:
-/*!********************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/Miniproject/Miniproject/components/uni-icons/icons.js ***!
-  \********************************************************************************************/
+/***/ 44:
+/*!************************************************************************************************!*\
+  !*** C:/Users/26064/Desktop/Miniproject/Miniproject/Miniproject/components/uni-icons/icons.js ***!
+  \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8156,34 +8184,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   'closefill': "\uE589",
   'sound': "\uE590",
   'scan': "\uE612" };exports.default = _default;
-
-/***/ }),
-
-/***/ 89:
-/*!******************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/Miniproject/Miniproject/network/home.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.swiperImg = swiperImg;exports.mainGoodsList = mainGoodsList;var _index = _interopRequireDefault(__webpack_require__(/*! @/network/index.js */ 17));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-function swiperImg() {
-  return (0, _index.default)({
-    url: '/home/multidata' });
-
-}
-
-function mainGoodsList(type, page) {
-  return (0, _index.default)({
-    url: '/home/data',
-    //注意：使用uni.request得get对应得参数属性使用：data
-    data: {
-      type: type,
-      page: page } });
-
-
-}
 
 /***/ })
 

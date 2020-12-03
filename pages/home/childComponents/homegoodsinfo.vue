@@ -1,6 +1,6 @@
 <template>
 	<view class="goods-wrapper">
-		<block v-for="(item ,indx) in list" :key="index">
+		<block v-for="(item ,index) in list" :key="index">
 		<view class="goods-item">
 			<image :src="item.show.img" mode="widthFix"></image>
 			<view class="goods-title">
@@ -8,7 +8,7 @@
 			</view>
 			<view>
 				<text>￥{{item.price}}</text>
-				<uniIcons type="star" size="40"></uniIcons>
+				<uniIcons type="star" size="20"></uniIcons>
 				<text>{{item.cfav}}</text>
 				
 			</view>
@@ -20,6 +20,9 @@
 <script>
 	import uniIcons from "@/components/uni-icons/uni-icons.vue";
 	export default{
+		components:{
+			uniIcons,
+		},
 		props:{
 				list:{
 					type:Array,

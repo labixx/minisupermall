@@ -16,7 +16,7 @@
 		props:{
 			titles:{
 				type:Array,
-				default:['流行','新款','精选']
+				required:true,
 			},
 		},
 		data(){
