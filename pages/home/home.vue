@@ -1,11 +1,12 @@
 <template>
-	<view>
-		<navbar self-define="head-wrapper">
+	<view class="home-wrapper">
+		<navbar self-define="head-wrapper" class="a">
 			<view slot="left" class="search-left">
 				<uni-icons type="search" size="20"></uni-icons>
 				<input placeholder="热搜:圆通快递被约谈"/>
 			</view>
 		</navbar>
+		<scroll-view scroll-y :style={height:scroll_height}>
 		<selfswiper :swiperImg="bannerImage">
 			<!-- 不支持slot-scope，所以使用v-slot -->
 		<!-- 	<template slot="imgList" slot-scope="info">
@@ -26,6 +27,7 @@
 		<tabcontrol :titles="tabTitles" @titiesClick="titlesClick"></tabcontrol>
 		<homegoodsinfo :list="goods[currentType].list"></homegoodsinfo>
 		<backtop :showBackTop="isShowBackTop"></backtop>
+		</scroll-view>
 	</view>
 </template>
 
@@ -69,6 +71,8 @@
 				currentType:"pop",
 				isShowBackTop:false,
 				tabTitles:['流行','新款','精选'],
+				clientHeight:null,
+				scroll_height:null,
 			
 			}
 		},
@@ -77,13 +81,19 @@
 			 this.getMainGoodsInfo('pop');
 			this.getMainGoodsInfo('new');
 			this.getMainGoodsInfo('sell'); 
+			//console.log('屏幕信息',uni.getSystemInfo());
+			//this.getInfo();
 			 // this.getMainGoodsInfo(this.currentType);
 		},
 		//页面滚动事件
 		onPageScroll(event){
 			this.isShowBackTop=event.scrollTop>1000;
 		},
-				
+		mounted(){
+			//获取屏幕的高度，默认除了tabbar
+			this.getScrollHeight();
+			
+		},
 		methods:{	
 			//获取轮播图数据
 			getSwiperImgList(){
@@ -102,7 +112,7 @@
 					//console.log(res);
 					this.goods[type].list=[...res.data.data.list];
 					this.goods[type].page=res.data.data.page;
-					console.log('数据',this.goods[type].list);
+					//console.log('数据',this.goods[type].list);
 				})
 			},
 			titlesClick(index){
@@ -120,6 +130,20 @@
 				//console.log("当前所点击的是",this.currentType);
 				//点击标题进行发送对应得商品数据
 				this.getMainGoodsInfo(this.currentType);
+			},
+			getScrollHeight(selector){
+				uni.getSystemInfo({
+						success:(res)=>{
+						this.clientHeight=res.windowHeight;
+						}
+				});
+				for(let i =0;i++;i<=selector){
+					
+				}
+				let query = uni.createSelectorQuery().select(".a").boundingClientRect(rect=>{
+					console.log(rect);
+					this.scroll_height=this.clientHeight - rect.height;
+				}).exec();
 			}
 			}
 			
@@ -147,4 +171,6 @@
 .weekImg image{
 	width:100%;
 }
+
+
 </style>

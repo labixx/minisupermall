@@ -41,8 +41,7 @@
 		"navigationBarTitleText":"ttttttttttt",
 		"navigationStyle":"custom",
 		"backgroundColor":"#d9d550",
-		"backgroundTextStyle":"dark",
-		"enablePullDownRefresh":true
+		"backgroundTextStyle":"dark"
 	},
 	"tabBar":{
 		"position":"bottom",

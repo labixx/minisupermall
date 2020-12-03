@@ -139,7 +139,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -171,7 +171,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _home = __webpack_require__(/*! @/network/home.js */ 17);function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}var navbar = function navbar() {__webpack_require__.e(/*! require.ensure | components/common/self-navbar */ "components/common/self-navbar").then((function () {return resolve(__webpack_require__(/*! @/components/common/self-navbar.vue */ 47));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var selfswiper = function selfswiper() {__webpack_require__.e(/*! require.ensure | components/common/self-swiper */ "components/common/self-swiper").then((function () {return resolve(__webpack_require__(/*! @/components/common/self-swiper.vue */ 54));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniIcons = function uniIcons() {Promise.all(/*! require.ensure | components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-icons/uni-icons")]).then((function () {return resolve(__webpack_require__(/*! @/components/uni-icons/uni-icons.vue */ 39));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var recommend = function recommend() {__webpack_require__.e(/*! require.ensure | pages/home/childComponents/recommend */ "pages/home/childComponents/recommend").then((function () {return resolve(__webpack_require__(/*! ./childComponents/recommend.vue */ 61));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var tabcontrol = function tabcontrol() {__webpack_require__.e(/*! require.ensure | pages/home/childComponents/tabcontrol */ "pages/home/childComponents/tabcontrol").then((function () {return resolve(__webpack_require__(/*! ./childComponents/tabcontrol.vue */ 68));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var homegoodsinfo = function homegoodsinfo() {__webpack_require__.e(/*! require.ensure | pages/home/childComponents/homegoodsinfo */ "pages/home/childComponents/homegoodsinfo").then((function () {return resolve(__webpack_require__(/*! ./childComponents/homegoodsinfo.vue */ 75));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var backtop = function backtop() {__webpack_require__.e(/*! require.ensure | pages/home/childComponents/backtop */ "pages/home/childComponents/backtop").then((function () {return resolve(__webpack_require__(/*! ./childComponents/backtop.vue */ 97));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+var _home = __webpack_require__(/*! @/network/home.js */ 17);function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}var navbar = function navbar() {__webpack_require__.e(/*! require.ensure | components/common/self-navbar */ "components/common/self-navbar").then((function () {return resolve(__webpack_require__(/*! @/components/common/self-navbar.vue */ 47));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var selfswiper = function selfswiper() {__webpack_require__.e(/*! require.ensure | components/common/self-swiper */ "components/common/self-swiper").then((function () {return resolve(__webpack_require__(/*! @/components/common/self-swiper.vue */ 54));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniIcons = function uniIcons() {Promise.all(/*! require.ensure | components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-icons/uni-icons")]).then((function () {return resolve(__webpack_require__(/*! @/components/uni-icons/uni-icons.vue */ 39));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var recommend = function recommend() {__webpack_require__.e(/*! require.ensure | pages/home/childComponents/recommend */ "pages/home/childComponents/recommend").then((function () {return resolve(__webpack_require__(/*! ./childComponents/recommend.vue */ 61));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var tabcontrol = function tabcontrol() {__webpack_require__.e(/*! require.ensure | pages/home/childComponents/tabcontrol */ "pages/home/childComponents/tabcontrol").then((function () {return resolve(__webpack_require__(/*! ./childComponents/tabcontrol.vue */ 68));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var homegoodsinfo = function homegoodsinfo() {__webpack_require__.e(/*! require.ensure | pages/home/childComponents/homegoodsinfo */ "pages/home/childComponents/homegoodsinfo").then((function () {return resolve(__webpack_require__(/*! ./childComponents/homegoodsinfo.vue */ 75));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var backtop = function backtop() {__webpack_require__.e(/*! require.ensure | pages/home/childComponents/backtop */ "pages/home/childComponents/backtop").then((function () {return resolve(__webpack_require__(/*! ./childComponents/backtop.vue */ 82));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -209,7 +211,9 @@ var _home = __webpack_require__(/*! @/network/home.js */ 17);function _toConsuma
 
       currentType: "pop",
       isShowBackTop: false,
-      tabTitles: ['流行', '新款', '精选'] };
+      tabTitles: ['流行', '新款', '精选'],
+      clientHeight: null,
+      scroll_height: null };
 
 
   },
@@ -218,13 +222,19 @@ var _home = __webpack_require__(/*! @/network/home.js */ 17);function _toConsuma
     this.getMainGoodsInfo('pop');
     this.getMainGoodsInfo('new');
     this.getMainGoodsInfo('sell');
+    //console.log('屏幕信息',uni.getSystemInfo());
+    //this.getInfo();
     // this.getMainGoodsInfo(this.currentType);
   },
   //页面滚动事件
   onPageScroll: function onPageScroll(event) {
     this.isShowBackTop = event.scrollTop > 1000;
   },
+  mounted: function mounted() {
+    //获取屏幕的高度，默认除了tabbar
+    this.getScrollHeight();
 
+  },
   methods: {
     //获取轮播图数据
     getSwiperImgList: function getSwiperImgList() {var _this = this;
@@ -243,7 +253,7 @@ var _home = __webpack_require__(/*! @/network/home.js */ 17);function _toConsuma
         //console.log(res);
         _this2.goods[type].list = _toConsumableArray(res.data.data.list);
         _this2.goods[type].page = res.data.data.page;
-        console.log('数据', _this2.goods[type].list);
+        //console.log('数据',this.goods[type].list);
       });
     },
     titlesClick: function titlesClick(index) {
@@ -261,7 +271,22 @@ var _home = __webpack_require__(/*! @/network/home.js */ 17);function _toConsuma
       //console.log("当前所点击的是",this.currentType);
       //点击标题进行发送对应得商品数据
       this.getMainGoodsInfo(this.currentType);
+    },
+    getScrollHeight: function getScrollHeight(selector) {var _this3 = this;
+      uni.getSystemInfo({
+        success: function success(res) {
+          _this3.clientHeight = res.windowHeight;
+        } });
+
+      for (var i = 0; i++; i <= selector) {
+
+      }
+      var query = uni.createSelectorQuery().select(".a").boundingClientRect(function (rect) {
+        console.log(rect);
+        _this3.scroll_height = _this3.clientHeight - rect.height;
+      }).exec();
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 /* 17 */,
