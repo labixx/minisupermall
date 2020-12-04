@@ -6,7 +6,7 @@
 				<input placeholder="热搜:圆通快递被约谈"/>
 			</view>
 		</navbar>
-		<scroll-view scroll-y :style={height:scroll_height}>
+		<scroll-view scroll-y class="scroll-content" @scrolltolower="handleScrollBottom">
 		<selfswiper :swiperImg="bannerImage">
 			<!-- 不支持slot-scope，所以使用v-slot -->
 		<!-- 	<template slot="imgList" slot-scope="info">
@@ -72,7 +72,7 @@
 				isShowBackTop:false,
 				tabTitles:['流行','新款','精选'],
 				clientHeight:null,
-				scroll_height:null,
+				scroll_height:0,
 			
 			}
 		},
@@ -81,9 +81,7 @@
 			 this.getMainGoodsInfo('pop');
 			this.getMainGoodsInfo('new');
 			this.getMainGoodsInfo('sell'); 
-			//console.log('屏幕信息',uni.getSystemInfo());
-			//this.getInfo();
-			 // this.getMainGoodsInfo(this.currentType);
+			
 		},
 		//页面滚动事件
 		onPageScroll(event){
@@ -91,7 +89,11 @@
 		},
 		mounted(){
 			//获取屏幕的高度，默认除了tabbar
-			this.getScrollHeight();
+			this.getScrollHeight(data=>{
+				console.log("iiiiiiii",data);
+				this.scroll_height=data.windowHeight;
+			});
+	console.log(this.scroll_height);
 			
 		},
 		methods:{	
@@ -115,6 +117,7 @@
 					//console.log('数据',this.goods[type].list);
 				})
 			},
+			
 			titlesClick(index){
 				switch(index){
 					case 0:
@@ -131,20 +134,20 @@
 				//点击标题进行发送对应得商品数据
 				this.getMainGoodsInfo(this.currentType);
 			},
-			getScrollHeight(selector){
-				uni.getSystemInfo({
-						success:(res)=>{
-						this.clientHeight=res.windowHeight;
-						}
-				});
-				for(let i =0;i++;i<=selector){
-					
-				}
-				let query = uni.createSelectorQuery().select(".a").boundingClientRect(rect=>{
-					console.log(rect);
-					this.scroll_height=this.clientHeight - rect.height;
-				}).exec();
-			}
+			//获取滚动的高度
+			 getScrollHeight(callback){
+				 setTimeout(()=>{
+					 uni.getSystemInfo({
+					 		success:(res)=>{
+					 			callback(res);
+					 		}
+					 });
+				 },1000)
+				},
+			//scroll-view滚动到底部触发加载更多数据
+			handleScrollBottom(){
+				this.getMainGoodsInfo(this.currentType);
+			},
 			}
 			
 	}
@@ -171,6 +174,8 @@
 .weekImg image{
 	width:100%;
 }
-
+.scroll-content{
+height:461px;
+}
 
 </style>
