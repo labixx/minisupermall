@@ -1,12 +1,17 @@
 <template>
 	<view class="home-wrapper">
-		<navbar self-define="head-wrapper" class="a">
+		<navbar self-define="head-wrapper" class="nav">
 			<view slot="left" class="search-left">
 				<uni-icons type="search" size="20"></uni-icons>
 				<input placeholder="热搜:圆通快递被约谈"/>
 			</view>
 		</navbar>
-		<scroll-view scroll-y class="scroll-content" @scrolltolower="handleScrollBottom">
+		<scroll-view scroll-y 
+		:style="{height:scroll_height+'px'}"
+		@scrolltolower="handleScrollBottom" 
+		scroll-top="scrollTopNum"
+		@scroll="handleScroll" 
+		>
 		<selfswiper :swiperImg="bannerImage">
 			<!-- 不支持slot-scope，所以使用v-slot -->
 		<!-- 	<template slot="imgList" slot-scope="info">
@@ -26,11 +31,12 @@
 		</view>
 		<tabcontrol :titles="tabTitles" @titiesClick="titlesClick"></tabcontrol>
 		<homegoodsinfo :list="goods[currentType].list"></homegoodsinfo>
-		<backtop :showBackTop="isShowBackTop"></backtop>
+		<backtop :showBackTop="isShowBackTop">
+			<image class="backtopLogo" slot="backtopLogo" src="@/static/img/home/top.png" @click="handleClick"></image>
+		</backtop>
 		</scroll-view>
 	</view>
 </template>
-
 <script>
 	import {swiperImg,mainGoodsList} from '@/network/home.js';
 	import navbar from '@/components/common/self-navbar.vue';
@@ -71,31 +77,30 @@
 				currentType:"pop",
 				isShowBackTop:false,
 				tabTitles:['流行','新款','精选'],
-				clientHeight:null,
-				scroll_height:0,
-			
+				//可滚动得区域
+				scroll_height:null,
+				//异步获取得数组
+				promiseArr:[],
+				scrollTopNum:0,
 			}
 		},
 		created() {
 			this.getSwiperImgList();
-			 this.getMainGoodsInfo('pop');
+			this.getMainGoodsInfo('pop');
 			this.getMainGoodsInfo('new');
 			this.getMainGoodsInfo('sell'); 
-			
 		},
-		//页面滚动事件
-		onPageScroll(event){
-			this.isShowBackTop=event.scrollTop>1000;
+		mounted(){	
+			this._getScrollHeight();
 		},
-		mounted(){
-			//获取屏幕的高度，默认除了tabbar
-			this.getScrollHeight(data=>{
-				console.log("iiiiiiii",data);
-				this.scroll_height=data.windowHeight;
-			});
-	console.log(this.scroll_height);
-			
+		//监听器
+		watch:{
+			//监听异步数据
+			promiseArr(newValue,oldVaule){
+				this.scroll_height=newValue[0].windowHeight - newValue[1].height;
+			}
 		},
+		
 		methods:{	
 			//获取轮播图数据
 			getSwiperImgList(){
@@ -117,7 +122,6 @@
 					//console.log('数据',this.goods[type].list);
 				})
 			},
-			
 			titlesClick(index){
 				switch(index){
 					case 0:
@@ -133,23 +137,49 @@
 				//console.log("当前所点击的是",this.currentType);
 				//点击标题进行发送对应得商品数据
 				this.getMainGoodsInfo(this.currentType);
-			},
-			//获取滚动的高度
-			 getScrollHeight(callback){
-				 setTimeout(()=>{
-					 uni.getSystemInfo({
-					 		success:(res)=>{
-					 			callback(res);
-					 		}
-					 });
-				 },1000)
-				},
+			},		
 			//scroll-view滚动到底部触发加载更多数据
 			handleScrollBottom(){
 				this.getMainGoodsInfo(this.currentType);
 			},
-			}
+			//scroll-view触发滚动事件
+			handleScroll(event){
+				this.isShowBackTop=event.detail.scrollTop>500;
+			},
+			//回到顶部事件
+			handleClick(){
+				this.scrollTopNum=0;
+				// uni.pageScrollTo({
+				// 	scrollTop:0,
+				// 	duration:3000,
+				// })
+				
+			},
+					
+			//动态获取可滚动得高度
+			//通过promise.all获取多个异步得数据
+			_getScrollHeight(){	
+				let as1=new Promise((resolve,reject)=>{
+					 uni.getSystemInfo({
+						success:res=>{
+							resolve(res);
+						}
+					})
+				});
+				let as2=new Promise((resolve,reject)=>{
+					uni.createSelectorQuery().select(".nav").boundingClientRect(data=>{
+						resolve(data);
+					}).exec();
+				});
+				Promise.all([as1,as2]).then(res=>{
+					//return res;
+					this.promiseArr=[...res];
+				}).catch(err=>{
+					console.log(err);
+				});
+			},
 			
+			}	
 	}
 </script>
 
@@ -177,5 +207,8 @@
 .scroll-content{
 height:461px;
 }
-
+.backtopLogo{
+	width:100rpx;
+	height:100rpx;
+}
 </style>

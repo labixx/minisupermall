@@ -26,5 +26,8 @@
 .scroll-content{
 height:461px;
 }
-
+.backtopLogo{
+	width:100rpx;
+	height:100rpx;
+}
 

@@ -1,6 +1,7 @@
 <template>
 	<view v-if="showBackTop"  class="backtop-wrapper">
-			<image src="@/static/img/home/top.png" @click="handleBackTop" class="imgs"></image>
+		<slot name="backtopLogo"></slot>
+			<!-- <image src="@/static/img/home/top.png" @click="handleBackTop" class="imgs"></image> -->
 		</view>
 </template>
 
@@ -14,12 +15,13 @@
 				},
 			},		
 			methods:{
-				handleBackTop(){
-					uni.pageScrollTo({
-						scrollTop:0,
-						duration:0,
-					})
-				}
+				// handleBackTop(){
+				// 	console.log("hhhhhhhh");
+				// 	uni.pageScrollTo({
+				// 		scrollTop:0,
+				// 		duration:0,
+				// 	})
+				// }
 			},
 		}
 </script>
