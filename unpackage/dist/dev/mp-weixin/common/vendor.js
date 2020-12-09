@@ -1935,6 +1935,63 @@ function normalizeComponent (
 
 /***/ }),
 
+/***/ 17:
+/*!***************************************************!*\
+  !*** D:/webProject/minisupermall/network/home.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.swiperImg = swiperImg;exports.mainGoodsList = mainGoodsList;var _index = _interopRequireDefault(__webpack_require__(/*! @/network/index.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+function swiperImg() {
+  return (0, _index.default)({
+    url: '/home/multidata' });
+
+}
+
+function mainGoodsList(type, page) {
+  return (0, _index.default)({
+    url: '/home/data',
+    //注意：使用uni.request得get对应得参数属性使用：data
+    data: {
+      type: type,
+      page: page } });
+
+
+}
+
+/***/ }),
+
+/***/ 18:
+/*!****************************************************!*\
+  !*** D:/webProject/minisupermall/network/index.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = _default;function _default(options) {
+  return new Promise(function (resolve, reject) {
+    uni.request({
+      url: 'http://152.136.185.210:8000/api/w6' + options.url,
+      method: options.method || 'get',
+      data: options.data || {},
+      timeout: options.timeout || '5000ms',
+      success: function success(res) {
+        resolve(res);
+      },
+      fail: function fail(err) {
+        reject(err);
+      } });
+
+  });
+
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
 /***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
@@ -7982,63 +8039,6 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 20:
-/*!**********************************************************************************!*\
-  !*** C:/Users/26064/Desktop/Miniproject/Miniproject/Miniproject/network/home.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.swiperImg = swiperImg;exports.mainGoodsList = mainGoodsList;var _index = _interopRequireDefault(__webpack_require__(/*! @/network/index.js */ 21));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-function swiperImg() {
-  return (0, _index.default)({
-    url: '/home/multidata' });
-
-}
-
-function mainGoodsList(type, page) {
-  return (0, _index.default)({
-    url: '/home/data',
-    //注意：使用uni.request得get对应得参数属性使用：data
-    data: {
-      type: type,
-      page: page } });
-
-
-}
-
-/***/ }),
-
-/***/ 21:
-/*!***********************************************************************************!*\
-  !*** C:/Users/26064/Desktop/Miniproject/Miniproject/Miniproject/network/index.js ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = _default;function _default(options) {
-  return new Promise(function (resolve, reject) {
-    uni.request({
-      url: 'http://152.136.185.210:8000/api/w6' + options.url,
-      method: options.method || 'get',
-      data: options.data || {},
-      timeout: options.timeout || '5000ms',
-      success: function success(res) {
-        resolve(res);
-      },
-      fail: function fail(err) {
-        reject(err);
-      } });
-
-  });
-
-}
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
 /***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -8071,9 +8071,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 4:
-/*!*****************************************************************************!*\
-  !*** C:/Users/26064/Desktop/Miniproject/Miniproject/Miniproject/pages.json ***!
-  \*****************************************************************************/
+/*!**********************************************!*\
+  !*** D:/webProject/minisupermall/pages.json ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -8081,10 +8081,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 47:
-/*!************************************************************************************************!*\
-  !*** C:/Users/26064/Desktop/Miniproject/Miniproject/Miniproject/components/uni-icons/icons.js ***!
-  \************************************************************************************************/
+/***/ 44:
+/*!*****************************************************************!*\
+  !*** D:/webProject/minisupermall/components/uni-icons/icons.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

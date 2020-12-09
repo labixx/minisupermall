@@ -10,8 +10,7 @@
 		:style="{height:scroll_height+'px'}"
 		@scrolltolower="handleScrollBottom" 
 		scroll-top="scrollTopNum"
-		@scroll="handleScroll" 
-		>
+		@scroll="handleScroll" >
 		<selfswiper :swiperImg="bannerImage">
 			<!-- 不支持slot-scope，所以使用v-slot -->
 		<!-- 	<template slot="imgList" slot-scope="info">

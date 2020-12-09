@@ -2,7 +2,7 @@
 	<view class="goods-wrapper">
 		<block v-for="(item ,index) in list" :key="index">
 		<view class="goods-item">
-			<image :src="item.show.img" mode="widthFix"></image>
+			<image :src="item.show.img" mode="widthFix" ></image>
 			<view class="goods-title">
 				<text>{{item.title}}</text>
 			</view>
@@ -22,6 +22,11 @@
 	export default{
 		components:{
 			uniIcons,
+		},
+		data(){
+			retunr {
+				
+			}
 		},
 		props:{
 				list:{
